@@ -13,12 +13,31 @@ import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.*;
 public class Player extends JPanel implements ActionListener{
+	private int width = Background.getWidth();
+	private int height = Background.getHeight();
+	Background enter = new Background();
+	
+	public void paint(Graphics g) {
+		super.paintComponent(g);
+		System.out.println("WORK");
 
+		enter.paint(g);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
-		}
-
+		Player f = new Player();
+	}
+	public Player () {
+		JFrame f = new JFrame("killer");
+		
+		f.setVisible(true);
+		f.setSize(new Dimension(width, height));
+		f.setBackground(Color.black);
+		f.add(this);
+		f.setResizable(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
 	protected ImageIcon createImageIcon(String path,
             String description) {
 		java.net.URL imgURL = getClass().getResource(path);
@@ -52,6 +71,8 @@ public class Player extends JPanel implements ActionListener{
 	b2.setHorizontalTextPosition(AbstractButton.CENTER);
 	b2.setMnemonic(KeyEvent.VK_M);
 	
+	
+	//exit button
 	JButton b3 = new JButton("EXIT", exitButton);
 	//Use the default text position of CENTER, TRAILING (RIGHT).
 	b3.setMnemonic(KeyEvent.VK_E);
@@ -73,6 +94,7 @@ public class Player extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		//repaint(g);
 		// TODO Auto-generated method stub
 		if ("rules".equals(e.getActionCommand())) {
 		} else if ("play".equals(e.getActionCommand())) {
