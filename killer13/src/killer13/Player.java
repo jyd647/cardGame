@@ -13,11 +13,17 @@ import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.ImageIcon;
+
+
 public class Player extends JPanel implements ActionListener{
-	private int width = Background.getWidth();
-	private int height = Background.getHeight();
-	Background enter = new Background();
 	
+		JFrame fr = new JFrame("killer");
+		JPanel jp = new JPanel(new BorderLayout());
+        JButton rules = new JButton();
+        JButton play = new JButton("PLAY"); 
+        JButton exit = new JButton("EXIT");
+        
 	public void paint(Graphics g) {
 		super.paintComponent(g);
 		///g.drawImage
@@ -27,32 +33,57 @@ public class Player extends JPanel implements ActionListener{
 		Player f = new Player();
 	}
 	public Player () {
-		JFrame fr = new JFrame("killer");
 		
 		
 		fr.setSize(617, 360);
 		fr.setResizable(true);
 		
 		ImageIcon image1 = new ImageIcon("table.jpg");
-        fr.add(new JLabel(image1));
-        fr.pack();        
-        JButton rules = new JButton("RULES"); 
-        //rules.setPreferredSize(new Dimension (5, 5));
+		fr.setContentPane(jp);
+        fr.setLayout(new FlowLayout());
+        fr.getContentPane().add(new JLabel(image1));
+        fr.pack();
+        //rules
+        rules = new JButton(image1);
+        rules.setContentAreaFilled(false);
+        rules.setRolloverEnabled(false);
+        rules.setBorderPainted(false);
+        rules.setFocusPainted(false);
+        rules.setPreferredSize(new Dimension (100, 50));
         rules.setHorizontalAlignment(SwingConstants.LEFT);
-        JButton play = new JButton("PLAY"); 
-        play.setPreferredSize(new Dimension (5, 5));
+        rules.setVerticalAlignment(SwingConstants.CENTER);
+
+        //play
+       
+        play.setPreferredSize(new Dimension (100, 50));
+        rules.setContentAreaFilled(false);
+        rules.setRolloverEnabled(false);
+        rules.setBorderPainted(false);
+        rules.setFocusPainted(false);
+        rules.setPreferredSize(new Dimension (100, 50));
         play.setHorizontalAlignment(SwingConstants.CENTER);
-        JButton exit = new JButton("EXIT"); 
-        exit.setPreferredSize(new Dimension (5, 5));
+        play.setVerticalAlignment(SwingConstants.CENTER );
+        
+        
+        
+        
+        //exit
+         
+        exit.setPreferredSize(new Dimension (100, 50));
         exit.setHorizontalAlignment(SwingConstants.RIGHT);
+        exit.setVerticalAlignment(SwingConstants.CENTER);
+        
+        
+        //add buttons to frame
         fr.getContentPane().add(rules);
         fr.getContentPane().add(play);
-        //fr.getContentPane().add(exit);
+        fr.getContentPane().add(exit);
         fr.setLocationRelativeTo(null);
         fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        //fr.setUndecorated(true);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fr.setVisible(true);
+
+        //fr.setUndecorated(true);
 	}
 	protected ImageIcon createImageIcon(String path,
             String description) {
