@@ -37,7 +37,7 @@ public class Player extends JPanel implements ActionListener{
         fr.add(new JLabel(image1));
         fr.pack();        
         JButton rules = new JButton("RULES"); 
-        rules.setPreferredSize(new Dimension (5, 5));
+        //rules.setPreferredSize(new Dimension (5, 5));
         rules.setHorizontalAlignment(SwingConstants.LEFT);
         JButton play = new JButton("PLAY"); 
         play.setPreferredSize(new Dimension (5, 5));
@@ -47,7 +47,10 @@ public class Player extends JPanel implements ActionListener{
         exit.setHorizontalAlignment(SwingConstants.RIGHT);
         fr.getContentPane().add(rules);
         fr.getContentPane().add(play);
-        fr.getContentPane().add(exit);
+        //fr.getContentPane().add(exit);
+        fr.setLocationRelativeTo(null);
+        fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        //fr.setUndecorated(true);
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fr.setVisible(true);
 	}
