@@ -198,6 +198,7 @@ public class Player extends JPanel implements ActionListener{
 
 	//}
 	
+	//actions for buttons
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		//repaint(g);
