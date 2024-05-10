@@ -8,19 +8,20 @@ import java.io.File;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
-public class Background extends JPanel{
+public class Background extends JComponent{
 
 		  private Image backgroundImage;
 
 		  // Some code to initialize the background image.
 		  // Here, we use the constructor to load the image. This
 		  // can vary depending on the use case of the panel.
-		  public Background(String fileName) {
-			  Image backgroundImage = new Image ();
+		  public Background(Image image) {
+			  this.backgroundImage = backgroundImage;
 		  }
 
-		  public void paintComponent(Graphics g) {
+		  protected void paintComponent(Graphics g) {
 		    super.paintComponent(g);
 
 		    // Draw the background image.
