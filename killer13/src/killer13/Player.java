@@ -16,19 +16,20 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.Stack;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.ImageIcon;
 
 
 public class Player extends JPanel implements ActionListener{
 		JFrame fr = new JFrame("killer");
 		JPanel jp = new JPanel(new BorderLayout());
         JButton rules = new JButton();
-        JButton play = new JButton("PLAY"); 
-        JButton exit = new JButton("EXIT");
+        JButton play = new JButton(); 
+        JButton exit = new JButton();
         JButton title = new JButton ();
+        Stack <Screens> screen = new Stack <>();
         
 	public void paint(Graphics g) {
 		super.paintComponent(g);
@@ -38,14 +39,10 @@ public class Player extends JPanel implements ActionListener{
 		// TODO Auto-generated method stub
 		Player f = new Player();
 		
+
 	}
-	public Player () {
-		
-		
-		
-        
-        //add buttons to frame
-        try {
+	public Player () {		
+		try {
         	fr.setSize(617, 360);
     		fr.setResizable(true);
     		
@@ -142,16 +139,22 @@ public class Player extends JPanel implements ActionListener{
             fr.setLocationRelativeTo(null);
             fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
             fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+            play.addActionListener(this);
+        	exit.addActionListener(this);
+        	rules.addActionListener(this);
     		fr.setVisible(true);
             
         } catch (IOException er) {
             er.printStackTrace();
         }
+	}
+	
+        //add buttons to frame
+        
         
 
         //fr.setUndecorated(true);
-	}
+	
 	protected ImageIcon createImageIcon(String path,
             String description) {
 		java.net.URL imgURL = getClass().getResource(path);
@@ -167,47 +170,21 @@ public class Player extends JPanel implements ActionListener{
 	   //error handling omitted for clarity...
 	    return new ImageIcon(imgURL);
 	}
-	//setting up buttons for home screen
-//	{
-//	
-//	JButton b1 = new JButton("?", rulesButton);
-//	b1.setVerticalTextPosition(AbstractButton.CENTER);
-//	b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
-//	b1.setMnemonic(KeyEvent.VK_D); //what does this mean
-//	b1.setActionCommand("rules"); // the command it follows
-//	b1.setVisible(true);
-//	
-//	//play button
-//	JButton b2 = new JButton("PLAY", playButton);
-//	b2.setVerticalTextPosition(AbstractButton.BOTTOM);
-//	b2.setHorizontalTextPosition(AbstractButton.CENTER);
-//	b2.setMnemonic(KeyEvent.VK_M);
-//	b2.setVisible(true);
-//	
-//	//exit button
-//	JButton b3 = new JButton("EXIT", exitButton);
-//	//Use the default text position of CENTER, TRAILING (RIGHT).
-//	b3.setMnemonic(KeyEvent.VK_E);
-//	b3.setActionCommand("exit");
-//	b3.setEnabled(false);
-//	b3.setVisible(true);
-//	//Listen for actions on buttons 1 and 3.
-//	b1.addActionListener(this);
-//	b3.addActionListener(this);
-//	
-
-	//}
 	
-	//actions for buttons
-	@Override
+	 
 	public void actionPerformed(ActionEvent e) {
 		//repaint(g);
 		// TODO Auto-generated method stub
 		if ("rules".equals(e.getActionCommand())) {
+			//JOPTIONPANE?
 		} else if ("play".equals(e.getActionCommand())) {
-	
-		} else {
+			// call play screen
+		} else if ("exit".equals(e.getActionCommand())) {
+			System.exit(0);
+		}else {
 			
 		}
-}
+	}
+	//actions for buttons
+	
 }
