@@ -16,7 +16,7 @@ import javax.swing.SwingConstants;
 
 public class EntryScreen extends Screens{
 	public EntryScreen () {
-		
+		//boom
 	}
 	public void homeScreen(JFrame fr) {
 	}
