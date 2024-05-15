@@ -18,9 +18,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-abstract class Screens extends JPanel implements ActionListener{
-	 public JFrame fr;
-	 public JPanel jp;
+public class Screens extends JPanel implements ActionListener{
+	 static JFrame fr;
+	 static JPanel jp;
 	 
 	 public Screens() {
 		 fr = new JFrame("killer");
@@ -46,8 +46,8 @@ abstract class Screens extends JPanel implements ActionListener{
     		
     		//resizing exit button
     		ImageIcon exits = new ImageIcon("exit.png");
-    		Image e = exits.getImage();
-    		Image newExit = e.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
+    		Image ex = exits.getImage();
+    		Image newExit = ex.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
     		exits = new ImageIcon(newExit);
     		
     		

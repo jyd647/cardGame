@@ -23,13 +23,20 @@ import javax.swing.*;
 
 
 public class Player extends JPanel {
+		Screens entry;
+		Screens play;
+       Stack <Screens> screen; 
+    public Player () {		
+    		screen = new Stack <>();
 
-        Stack <Screens> screen; 
-        
+    }
+    
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		Screens entry = new Screens ();
+		
 		screen.add(entry);
+		play.add(play);
+
 		///g.drawImage
 	}
 	public static void main(String[] args) {
@@ -38,10 +45,7 @@ public class Player extends JPanel {
 		
 		
 	}
-	public Player () {		
-		screen = new Stack <>();
-		
-	}
+	
 	
         //add buttons to frame
         
