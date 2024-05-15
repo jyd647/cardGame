@@ -28,7 +28,7 @@ public class Player extends JPanel {
         
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		Screens entry = new Screens();
+		Screens entry = new Screens ();
 		screen.add(entry);
 		///g.drawImage
 	}

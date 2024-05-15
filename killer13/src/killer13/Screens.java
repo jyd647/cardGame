@@ -19,17 +19,19 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 abstract class Screens extends JPanel implements ActionListener{
-	 JFrame fr = new JFrame("killer");
-	 JPanel jp = new JPanel(new BorderLayout());
-	 JButton rules = new JButton();
-	 JButton play = new JButton(); 
-	 JButton exit = new JButton();
-	 JButton title = new JButton ();
+	 public JFrame fr;
+	 public JPanel jp;
+	 
 	 public Screens() {
-		 
+		 fr = new JFrame("killer");
+		 jp = new JPanel(new BorderLayout());
 	 }
-	public void homeScreen() {
+	public void homeScreen(Screens e) {
 		try {
+			JButton rules = new JButton();
+			JButton play = new JButton(); 
+			JButton exit = new JButton();
+			JButton title = new JButton ();
         	fr.setSize(617, 360);
     		fr.setResizable(true);
     		
