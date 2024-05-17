@@ -45,13 +45,14 @@ public class Player extends JPanel {
  		screen = new Stack <Screens>();
  		screen.add(play);
  		screen.add(entry);
+			entry.homeScreen();
+
  		if (play.getPlay() == true) {
  			screen.pop();
  		}
- 		if (screen.peek().equals(entry)) {
- 			entry.homeScreen();
- 		} else if (screen.peek().equals(play)) {
- 			//play.playScreen();
+ 		if (screen.peek().equals(play)) {
+			System.exit(0);
+ 			play.playScreen();
  			
  		} else {
  			return;
