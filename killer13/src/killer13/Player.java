@@ -34,6 +34,7 @@ public class Player extends JPanel {
 		 //screen.pop().homeScreen();
 
 		///g.drawImage
+		
 	}
 	
 	public static void main(String[] args) {
@@ -45,18 +46,18 @@ public class Player extends JPanel {
  		screen = new Stack <Screens>();
  		screen.add(play);
  		screen.add(entry);
-			entry.homeScreen();
-
- 		if (play.getPlay() == true) {
- 			screen.pop();
- 		}
- 		if (screen.peek().equals(play)) {
-			System.exit(0);
- 			play.playScreen();
- 			
- 		} else {
- 			return;
- 		}
+		entry.homeScreen();
+//		if (play.getPlay() == true) {
+// 			screen.pop();
+// 		}
+// 		if (screen.peek().equals(play)) {
+//			System.exit(0);
+// 			System.out.println("kay");
+// 			
+// 		} else {
+// 			System.out.println("hey");
+// 		}
+ 		
 	 }
 	
         //add buttons to frame

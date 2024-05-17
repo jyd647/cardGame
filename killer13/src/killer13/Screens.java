@@ -277,6 +277,7 @@ public class Screens extends JPanel implements ActionListener{
 			JOptionPane.showMessageDialog(null, ru, "RULES!", JOptionPane.INFORMATION_MESSAGE );
 		} else if ("play".equals(e.getActionCommand())) {
 			playing = true;
+			playScreen();
 			
 		} else if ("exit".equals(e.getActionCommand())) {
 			System.exit(0);
