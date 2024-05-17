@@ -19,14 +19,16 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 public class Screens extends JPanel implements ActionListener{
-	 static JFrame fr;
-	 static JPanel jp;
-	 
+
+	
+	public JFrame fr;
+	 public JPanel jp;
+	 private boolean playing;
 	 public Screens() {
 		 fr = new JFrame("killer");
 		 jp = new JPanel(new BorderLayout());
 	 }
-	public void homeScreen(Screens e) {
+	public void homeScreen() {
 		try {
 			JButton rules = new JButton();
 			JButton play = new JButton(); 
@@ -122,7 +124,7 @@ public class Screens extends JPanel implements ActionListener{
             fr.setLayout(null);
             jp.setLayout(null);
             title.setBounds(595, 195, 800, 400);
-            rules.setBounds(600, 400, 400, 400);
+            rules.setBounds(625, 480, 175, 250);
             play.setBounds(750, 400, 400, 400);
             exit.setBounds(950, 400, 400, 400);
             fr.setLocationRelativeTo(null);
@@ -132,8 +134,10 @@ public class Screens extends JPanel implements ActionListener{
         	exit.addActionListener(this);
         	rules.addActionListener(this);
     		fr.setVisible(true);
+    		
             
         } catch (IOException er) {
+        	System.out.println("not working");
             er.printStackTrace();
         }
 	}
@@ -159,13 +163,20 @@ public class Screens extends JPanel implements ActionListener{
 					+ "Even when a person has emptied their hand, go ahead and play for 2nd, 3rd, 4th place!";
 			JOptionPane.showMessageDialog(null, ru, "RULES!", JOptionPane.INFORMATION_MESSAGE );
 		} else if ("play".equals(e.getActionCommand())) {
-			// call play screen
+			playing = true;
+			
 		} else if ("exit".equals(e.getActionCommand())) {
 			System.exit(0);
 		}else {
 			
 		}
 	}
+	 public boolean getPlay() {
+			return playing;
+		}
+		public void setPlay(boolean playing) {
+			this.playing = playing;
+		}
 	public void updateScreen() {
 		
 	}

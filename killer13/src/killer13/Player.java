@@ -23,32 +23,42 @@ import javax.swing.*;
 
 
 public class Player extends JPanel {
-		Screens entry;
-		Screens play;
+		Screens entry = new Screens();
+		Screens play = new Screens();
        Stack <Screens> screen; 
-    public Player () {		
-    		screen = new Stack <>();
-
-    }
-    
+   
+      
 	public void paint(Graphics g) {
 		super.paintComponent(g);
-		
-		screen.add(entry);
-		play.add(play);
+		Graphics2D g2 = (Graphics2D) g;
+		 //screen.pop().homeScreen();
 
 		///g.drawImage
 	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Player f = new Player();
 		
-		
 	}
-	
+	 public Player () {		
+ 		screen = new Stack <Screens>();
+ 		screen.add(play);
+ 		screen.add(entry);
+ 		if (play.getPlay() == true) {
+ 			screen.pop();
+ 		}
+ 		if (screen.peek().equals(entry)) {
+ 			entry.homeScreen();
+ 		} else if (screen.peek().equals(play)) {
+ 			//play.playScreen();
+ 			
+ 		} else {
+ 			return;
+ 		}
+	 }
 	
         //add buttons to frame
-        
         
 
         //fr.setUndecorated(true);
