@@ -143,62 +143,60 @@ public class Screens extends JPanel implements ActionListener{
 	}
 	public void playScreen() {
 		try {
-			JButton rules = new JButton();
+			JButton pass = new JButton();
 			JButton play = new JButton(); 
-			JButton exit = new JButton();
-			JButton title = new JButton ();
         	fr.setSize(617, 360);
     		fr.setResizable(true);
     		
-    		ImageIcon rule = new ImageIcon("rules.png");
+    		//ImageIcon pass = new ImageIcon("passcombo.png");
     	
-    		//resizing play button
-    		ImageIcon plays = new ImageIcon("play.png");
-    		Image p = plays.getImage();
-    		Image newPlay = p.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
-    		plays = new ImageIcon(newPlay);
+    		//resizing pass button
+    		ImageIcon passcombo = new ImageIcon("passcombo.png");
+    		Image pa = passcombo.getImage();
+    		Image newPass = pa.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
+    		passcombo = new ImageIcon(newPass);
     		
     		
     		//resizing exit button
-    		ImageIcon exits = new ImageIcon("exit.png");
-    		Image ex = exits.getImage();
-    		Image newExit = ex.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
-    		exits = new ImageIcon(newExit);
+    		ImageIcon playC = new ImageIcon("playcombo.png");
+    		Image pl = playC.getImage();
+    		Image newPL = pl.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
+    		playC = new ImageIcon(newPL);
     		
     		
-        	ImageIcon titly = new ImageIcon("title.png");
-        	Image t = titly.getImage();
-    		//Image newTitle = t.getScaledInstance( 600, 300,  java.awt.Image.SCALE_SMOOTH ) ;
-
-        	titly = new ImageIcon (t);
-        	
-        	
-        	title = new JButton (titly);
-            title.setContentAreaFilled(false);
-            title.setRolloverEnabled(false);
-            title.setBorderPainted(false);
-            title.setFocusPainted(false);
-            title.setPreferredSize(new Dimension (550, 300));
-            title.setHorizontalAlignment(SwingConstants.CENTER);
-            title.setVerticalAlignment(SwingConstants.CENTER);
+//        	ImageIcon titly = new ImageIcon("title.png");
+//        	Image t = titly.getImage();
+//    		//Image newTitle = t.getScaledInstance( 600, 300,  java.awt.Image.SCALE_SMOOTH ) ;
+//
+//        	titly = new ImageIcon (t);
+//        	
+//        	
+//        	title = new JButton (titly);
+//            title.setContentAreaFilled(false);
+//            title.setRolloverEnabled(false);
+//            title.setBorderPainted(false);
+//            title.setFocusPainted(false);
+//            title.setPreferredSize(new Dimension (550, 300));
+//            title.setHorizontalAlignment(SwingConstants.CENTER);
+//            title.setVerticalAlignment(SwingConstants.CENTER);
        
     		fr.setContentPane(jp);
             fr.setLayout(new FlowLayout());
             fr.pack();
            
-            //rules
-            rules = new JButton(rule);
-            rules.setContentAreaFilled(false);
-            rules.setRolloverEnabled(false);
-            rules.setBorderPainted(false);
-            rules.setFocusPainted(false);
-            rules.setPreferredSize(new Dimension (150, 75));
-            rules.setHorizontalAlignment(SwingConstants.LEFT);
-            rules.setVerticalAlignment(SwingConstants.CENTER);
-            rules.setActionCommand("rules");
+            //pass
+            pass = new JButton(passcombo);
+            pass.setContentAreaFilled(false);
+            pass.setRolloverEnabled(false);
+            pass.setBorderPainted(false);
+            pass.setFocusPainted(false);
+            pass.setPreferredSize(new Dimension (150, 75));
+            pass.setHorizontalAlignment(SwingConstants.LEFT);
+            pass.setVerticalAlignment(SwingConstants.CENTER);
+            pass.setActionCommand("rules");
 
             //play
-            play = new JButton (plays);
+            play = new JButton (playC);
             play.setPreferredSize(new Dimension (150, 75));
             play.setContentAreaFilled(false);
             play.setRolloverEnabled(false);
@@ -210,19 +208,7 @@ public class Screens extends JPanel implements ActionListener{
             
             
             
-            
-            //exit
-            exit = new JButton (exits);
-            exit.setContentAreaFilled(false);
-            exit.setRolloverEnabled(false);
-            exit.setBorderPainted(false);
-            exit.setFocusPainted(false);
-            exit.setPreferredSize(new Dimension (150, 75));
-            exit.setHorizontalAlignment(SwingConstants.RIGHT);
-            exit.setVerticalAlignment(SwingConstants.CENTER);
-            exit.setActionCommand("exit");
-            
-        	ImageIcon backy = new ImageIcon(ImageIO.read(new File("fronty.PNG")));
+        	ImageIcon backy = new ImageIcon(ImageIO.read(new File("table.jpg")));
         	Image b = backy.getImage();
         	Image newB = b.getScaledInstance( 1000, 800, java.awt.Image.SCALE_DEFAULT ) ;
         	backy = new ImageIcon (newB);
@@ -230,22 +216,17 @@ public class Screens extends JPanel implements ActionListener{
         	
             //back.setSize(1000, 800);
         	fr.setContentPane(back);
-            fr.getContentPane().add(title);
-        	fr.getContentPane().add(rules);
+        	fr.getContentPane().add(pass);
             fr.getContentPane().add(play);
-            fr.getContentPane().add(exit);
             fr.setLayout(null);
             jp.setLayout(null);
-            title.setBounds(595, 195, 800, 400);
-            rules.setBounds(625, 480, 175, 250);
+            pass.setBounds(625, 480, 175, 250);
             play.setBounds(750, 400, 400, 400);
-            exit.setBounds(950, 400, 400, 400);
             fr.setLocationRelativeTo(null);
             fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
             fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             play.addActionListener(this);
-        	exit.addActionListener(this);
-        	rules.addActionListener(this);
+        	pass.addActionListener(this);
     		fr.setVisible(true);
     		
             
