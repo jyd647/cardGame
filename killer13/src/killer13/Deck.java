@@ -20,47 +20,58 @@ public class Deck {
 	
 	private void initializeDeck() {
 		
+		//creating deck with cards with numbers assigned to them
+		
+		//adding to deck face cards, with assigned values
 		deck.add(new Card(getImage("/imgs/jackofspades.png"), "Spades", 9));
         deck.add(new Card(getImage("/imgs/jackofclubs.png"), "Clubs", 9));
         deck.add(new Card(getImage("/imgs/jackofdiamonds.png"), "Diamonds", 9));
         deck.add(new Card(getImage("/imgs/jackofhearts.png"), "Hearts", 9));
+        
         deck.add(new Card(getImage("/imgs/queenofspades.png"), "Spades", 10));
         deck.add(new Card(getImage("/imgs/queenofclubs.png"), "Clubs", 10));
         deck.add(new Card(getImage("/imgs/queenofdiamonds.png"), "Diamonds", 10));
         deck.add(new Card(getImage("/imgs/queenofhearts.png"), "Hearts", 10));
+        
         deck.add(new Card(getImage("/imgs/kingofspades.png"), "Spades", 11));
         deck.add(new Card(getImage("/imgs/kingofclubs.png"), "Clubs", 11));
         deck.add(new Card(getImage("/imgs/kingofdiamonds.png"), "Diamonds", 11));
         deck.add(new Card(getImage("/imgs/kingofhearts.png"), "Hearts", 11));
+        
         deck.add(new Card(getImage("/imgs/aceofspades.png"), "Spades", 12));
 		deck.add(new Card(getImage("/imgs/aceofclubs.png"), "Clubs", 12));
 		deck.add(new Card(getImage("/imgs/aceofdiamonds.png"), "Diamonds", 12));
-		deck.add(new Card(getImage("/imgs/aceofhearts.png"), "hearts", 12));
+		deck.add(new Card(getImage("/imgs/aceofhearts.png"), "Hearts", 12));
 		
-		for (int i = 2; i <= 10; i++) {
-			if(i == 2) {
-				i = 13;
-			} else if(i == 3) {
-				i = 1;
-			} else if(i == 4) {
-				i = 2;
-			} else if(i == 5) {
-				i = 3;
-			} else if(i == 6) {
-				i = 4;
-			} else if(i == 7) {
-				i = 5;
-			} else if(i == 8) {
-				i = 6;
-			} else if(i == 9) {
-				i = 7;
-			} else if(i == 10) {
-				i = 8;
-			}
-            deck.add(new Card(getImage("/imgs/" + i + "spades.png"), "Spades", i));
-            deck.add(new Card(getImage("/imgs/" + i + "clubs.png"), "Clubs", i));
-            deck.add(new Card(getImage("/imgs/" + i + "diamonds.png"), "Diamonds", i));
-            deck.add(new Card(getImage("/imgs/" + i + "hearts.png"), "Hearts", i));
+		//deck.add(new Card(getImage("/imgs/2hearts.png"), "Hearts", 13));)
+		
+		//number cards - assigning values
+		for (int i = 3; i <= 10; i++) {
+//			if(i == 2) {
+//				i = 13;
+//			} else if(i == 3) {
+//				i = 1;
+//			} else if(i == 4) {
+//				i = 2;
+//			} else if(i == 5) {
+//				i = 3;
+//			} else if(i == 6) {
+//				i = 4;
+//			} else if(i == 7) {
+//				i = 5;
+//			} else if(i == 8) {
+//				i = 6;
+//			} else if(i == 9) {
+//				i = 7;
+//			} else if(i == 10) {
+//				i = 8;
+//			}
+			
+			//adding to deck
+            deck.add(new Card(getImage("/imgs/" + i + "spades.png"), "Spades", i-2));
+            deck.add(new Card(getImage("/imgs/" + i + "clubs.png"), "Clubs", i-2));
+            deck.add(new Card(getImage("/imgs/" + i + "diamonds.png"), "Diamonds", i-2));
+            deck.add(new Card(getImage("/imgs/" + i + "hearts.png"), "Hearts", i-2));
         }
 		
 		

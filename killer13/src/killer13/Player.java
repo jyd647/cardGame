@@ -56,16 +56,16 @@ public class Player extends JPanel {
  		screen.add(play);
  		screen.add(entry);
 		entry.homeScreen();
-//		if (play.getPlay() == true) {
-// 			screen.pop();
-// 		}
-// 		if (screen.peek().equals(play)) {
-//			System.exit(0);
-// 			System.out.println("kay");
-// 			
-// 		} else {
-// 			System.out.println("hey");
-// 		}
+		if (play.getPlay() == true) {
+ 			screen.pop();
+ 		}
+ 		if (screen.peek().equals(play)) {
+			System.exit(0);
+ 			System.out.println("kay");
+ 			
+ 		} else {
+ 			System.out.println("hey");
+ 		}
  		
 	 }
 	
