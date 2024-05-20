@@ -23,19 +23,28 @@ import javax.swing.*;
 
 
 public class Player extends JPanel {
-		Screens entry = new Screens();
-		Screens play = new Screens();
-       Stack <Screens> screen; 
+	Screens entry = new Screens();
+	Screens play = new Screens();
+    Stack <Screens> screen; 
+    private Deck deck;
    
       
-	public void paint(Graphics g) {
-		super.paintComponent(g);
-		Graphics2D g2 = (Graphics2D) g;
-		 //screen.pop().homeScreen();
+       public void paint(Graphics g) {
+   		super.paintComponent(g);
+   		Graphics2D g2 = (Graphics2D) g;
+   		
+   		Card card = deck.drawCard();
+   		if(card != null) {
+   			g2.drawImage(card.getImage(), 10, 10, this);
+   		}	
+   			
+   			
+   		
+   		 //screen.pop().homeScreen();
 
-		///g.drawImage
-		
-	}
+   		///g.drawImage
+   		
+   	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
