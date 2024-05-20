@@ -1,5 +1,6 @@
 package killer13;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 
@@ -44,9 +45,14 @@ public class Hand {
 		this.enemy = enemy;
 	}
 
+
 	
 	
-	
+	public void paintCurr(Graphics g) {
+		for (int i = 0; i < curr.size(); i++) {
+			
+		}
+	}
 	
 	
 }
