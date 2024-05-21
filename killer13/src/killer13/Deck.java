@@ -14,7 +14,8 @@ public class Deck {
 	
 	public Deck() {
 		deck = new ArrayList<>();
-		initializeDeck();
+		initializeDeck(); 
+		System.out.println("meow");
 	}
 	
 	
