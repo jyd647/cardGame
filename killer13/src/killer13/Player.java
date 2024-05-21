@@ -28,14 +28,15 @@ public class Player extends JPanel {
 	Screens entry = new Screens();
 	Screens play = new Screens();
     Stack <Screens> screen; 
-    public Deck deck;
-    public Hand h;
+   // Panel back = new Panel("/images/jackofspades.png");
+    private Deck deck;
+    private Hand h;
     private ArrayList<Card> playing = h.getCurr();
     private ArrayList<Card> opp = h.getEnemy();
        public void paint(Graphics g) {
    		super.paintComponent(g);
    		Graphics2D g2 = (Graphics2D) g;
-   		
+   		// back.paint(g);
 //   		Card card = deck.drawCard();
 //   		if(card != null) {
 //   			g2.drawImage(card.getImage(), 10, 10, this);
@@ -98,8 +99,9 @@ public class Player extends JPanel {
 	    return new ImageIcon(imgURL);
 	}
 	
-	 
+    
+    
+}
 	
 	//actions for buttons
 	
-}

@@ -14,7 +14,7 @@ public class Deck {
 	
 	
 	public Deck() {
-		cardBack = getImage("/imgs/" + "cardback.png");
+		cardBack = getImage("/images/" + "cardback.png");
 		deck = new ArrayList<>();
 		initializeDeck(); 
 		System.out.println("meow");
