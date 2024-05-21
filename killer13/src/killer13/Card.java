@@ -9,12 +9,12 @@ import java.net.URL;
 
 public class Card extends Deck{
 	
-//	private Image aceSpades, aceClubs, aceDiamonds, aceHearts, jackSpades, jackClubs, jackHearts, jackDiamonds,
+//	private Image cardBack, aceSpades, aceClubs, aceDiamonds, aceHearts, jackSpades, jackClubs, jackHearts, jackDiamonds,
 //	queenSpades, queenClubs, queenDiamonds, queenHearts, kingSpades, kingClubs, kingDiamonds, kingHearts, threeSpades, threeClubs,
 //	threeDiamonds, threeHearts, fourSpades, fourClubs, fourDiamonds, fourHearts, fiveSpades, fiveClubs, fiveDiamonds, fiveHearts,
 //	sixSpades, sixClubs, sixDiamonds, sixHearts, sevenSpades, sevenClubs, sevenDiamond, sevenHearts, eightSpades, eightClubs,
 //	eightDiamonds, eightHearts, nineSpades, nineClubs, nineDiamonds, nineHearts, tenSpades, tenClubs, tenDiamonds, tenHearts,
-//	twoSpades, twoClubs, twoDiamonds, twoHearts, cardBack;
+//	twoSpades, twoClubs, twoDiamonds, twoHearts;
 	private Image image;
 	private String suit;
 	private int value;

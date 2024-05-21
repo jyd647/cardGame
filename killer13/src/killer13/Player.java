@@ -16,6 +16,8 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import javax.imageio.ImageIO;
@@ -26,17 +28,18 @@ public class Player extends JPanel {
 	Screens entry = new Screens();
 	Screens play = new Screens();
     Stack <Screens> screen; 
-    private Deck deck;
-   
-      
+    public Deck deck;
+    public Hand h;
+    private ArrayList<Card> playing = h.getCurr();
+    private ArrayList<Card> opp = h.getEnemy();
        public void paint(Graphics g) {
    		super.paintComponent(g);
    		Graphics2D g2 = (Graphics2D) g;
    		
-   		Card card = deck.drawCard();
-   		if(card != null) {
-   			g2.drawImage(card.getImage(), 10, 10, this);
-   		}	
+//   		Card card = deck.drawCard();
+//   		if(card != null) {
+//   			g2.drawImage(card.getImage(), 10, 10, this);
+//   		}	
    			
    			
    		
@@ -48,10 +51,15 @@ public class Player extends JPanel {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Player f = new Player();
+		
+		//Player player1 = new Player(deck.dealHand(13));
+		
 		
 	}
-	 public Player () {		
+	
+	
+	 public Player (List<Card> s) {	
+		deck = new Deck();
  		screen = new Stack <Screens>();
  		screen.add(play);
  		screen.add(entry);

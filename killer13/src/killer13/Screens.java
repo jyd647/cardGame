@@ -229,6 +229,11 @@ public class Screens extends JPanel implements ActionListener{
         	pass.addActionListener(this);
     		fr.setVisible(true);
     		
+    		
+    		
+    		
+    		
+    		
             
         } catch (IOException er) {
         	System.out.println("not working");
