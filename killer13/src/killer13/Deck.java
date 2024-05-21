@@ -19,7 +19,7 @@ public class Deck {
 	}
 	
 	
-	private void initializeDeck() {
+	private void initializeDeck() {  
 		
 		//creating deck with cards with numbers assigned to them
 		
