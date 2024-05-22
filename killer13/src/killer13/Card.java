@@ -21,11 +21,11 @@ public class Card extends Deck{
 	private double scaleWidth;
 	
 	
-	public Card(Image image, String suit, int value) {
+	public Card(Image img, String s, int val) {
 		
-		this.image = image;
-		this.suit = suit;
-		this.value = value;
+		image = img;
+		suit = s;
+		value = val;
 		
 //		cardBack = getImage("/imgs/" + "cardback.png");
 //		aceSpades = getImage("/imgs/" + "aceofspades.png");
@@ -99,16 +99,16 @@ public class Card extends Deck{
 	
 	
 	
-//	private Image getImage(String path) {
-////		Image tempImage = null;
-////		try {
-////			URL imageURL = Player.class.getResource(path);
-////			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
-////		} catch (Exception e) {
-////			e.printStackTrace();
-////		}
-////		return tempImage;
-////	}
+	private Image getImage(String path) {
+		Image tempImage = null;
+		try {
+			URL imageURL = Card.class.getResource(path);
+			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tempImage;
+	}
 	
 	
 	

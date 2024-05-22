@@ -28,9 +28,9 @@ public class Player extends JPanel {
 	Screens entry = new Screens();
 	Screens play = new Screens();
     Stack <Screens> screen; 
-   // Panel back = new Panel("/images/jackofspades.png");
+    Panel back = new Panel("H:\\git\\cardGame\\killer13\\images\\jackofspades.png");
     private Deck deck;
-    private Hand h;
+    private Hand h = new Hand();
     private ArrayList<Card> playing = h.getCurr();
     private ArrayList<Card> opp = h.getEnemy();
        public void paint(Graphics g) {
@@ -44,7 +44,7 @@ public class Player extends JPanel {
    			
    			
    		
-   		 //screen.pop().homeScreen();
+   		//screen.pop().homeScreen();
 
    		///g.drawImage
    		
@@ -53,13 +53,13 @@ public class Player extends JPanel {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		//Player player1 = new Player(deck.dealHand(13));
+		Player player1 = new Player();
 		
 		
 	}
 	
 	
-	 public Player (List<Card> s) {	
+	 public Player () {	
 		deck = new Deck();
  		screen = new Stack <Screens>();
  		screen.add(play);
