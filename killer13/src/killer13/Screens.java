@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 public class Screens extends JPanel implements ActionListener{
 
 	
-	public JFrame fr;
+	 public JFrame fr;
 	 public JPanel jp;
 	 private boolean playing;
 	 public Screens() {
@@ -142,103 +142,103 @@ public class Screens extends JPanel implements ActionListener{
         }
 	}
 	public void playScreen() {
-		try {
-			JButton pass = new JButton();
-			JButton play = new JButton(); 
-        	fr.setSize(617, 360);
-    		fr.setResizable(true);
-    		
-    		//ImageIcon pass = new ImageIcon("passcombo.png");
-    	
-    		//resizing pass button
-    		ImageIcon passcombo = new ImageIcon("passcombo.png");
-    		Image pa = passcombo.getImage();
-    		Image newPass = pa.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
-    		passcombo = new ImageIcon(newPass);
-    		
-    		
-    		//resizing exit button
-    		ImageIcon playC = new ImageIcon("playcombo.png");
-    		Image pl = playC.getImage();
-    		Image newPL = pl.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
-    		playC = new ImageIcon(newPL);
-    		
-    		
-//        	ImageIcon titly = new ImageIcon("title.png");
-//        	Image t = titly.getImage();
-//    		//Image newTitle = t.getScaledInstance( 600, 300,  java.awt.Image.SCALE_SMOOTH ) ;
+		//try {
+//			JButton pass = new JButton();
+//			JButton play = new JButton(); 
+//        	fr.setSize(617, 360);
+//    		fr.setResizable(true);
+//    		
+//    		//ImageIcon pass = new ImageIcon("passcombo.png");
+//    	
+//    		//resizing pass button
+//    		ImageIcon passcombo = new ImageIcon("passcombo.png");
+//    		Image pa = passcombo.getImage();
+//    		Image newPass = pa.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
+//    		passcombo = new ImageIcon(newPass);
+//    		
+//    		
+//    		//resizing exit button
+//    		ImageIcon playC = new ImageIcon("playcombo.png");
+//    		Image pl = playC.getImage();
+//    		Image newPL = pl.getScaledInstance( 150, 75,  java.awt.Image.SCALE_SMOOTH ) ;
+//    		playC = new ImageIcon(newPL);
+//    		
+//    		
+////        	ImageIcon titly = new ImageIcon("title.png");
+////        	Image t = titly.getImage();
+////    		//Image newTitle = t.getScaledInstance( 600, 300,  java.awt.Image.SCALE_SMOOTH ) ;
+////
+////        	titly = new ImageIcon (t);
+////        	
+////        	
+////        	title = new JButton (titly);
+////            title.setContentAreaFilled(false);
+////            title.setRolloverEnabled(false);
+////            title.setBorderPainted(false);
+////            title.setFocusPainted(false);
+////            title.setPreferredSize(new Dimension (550, 300));
+////            title.setHorizontalAlignment(SwingConstants.CENTER);
+////            title.setVerticalAlignment(SwingConstants.CENTER);
+//       
+//    		fr.setContentPane(jp);
+//            fr.setLayout(new FlowLayout());
+//            fr.pack();
+//           
+//            //pass
+//            pass = new JButton(passcombo);
+//            pass.setContentAreaFilled(false);
+//            pass.setRolloverEnabled(false);
+//            pass.setBorderPainted(false);
+//            pass.setFocusPainted(false);
+//            pass.setPreferredSize(new Dimension (150, 75));
+//            pass.setHorizontalAlignment(SwingConstants.LEFT);
+//            pass.setVerticalAlignment(SwingConstants.CENTER);
+//            pass.setActionCommand("rules");
 //
-//        	titly = new ImageIcon (t);
+//            //play
+//            play = new JButton (playC);
+//            play.setPreferredSize(new Dimension (150, 75));
+//            play.setContentAreaFilled(false);
+//            play.setRolloverEnabled(false);
+//            play.setBorderPainted(false);
+//            play.setFocusPainted(false);
+//            play.setHorizontalAlignment(SwingConstants.CENTER);
+//            play.setVerticalAlignment(SwingConstants.CENTER );
+//            play.setActionCommand("play");
+//            
+//            
+//            
+//        	ImageIcon backy = new ImageIcon(ImageIO.read(new File("table.jpg")));
+//        	Image b = backy.getImage();
+//        	Image newB = b.getScaledInstance( 1000, 800, java.awt.Image.SCALE_DEFAULT ) ;
+//        	backy = new ImageIcon (newB);
+//        	JLabel back = new JLabel(backy);
 //        	
-//        	
-//        	title = new JButton (titly);
-//            title.setContentAreaFilled(false);
-//            title.setRolloverEnabled(false);
-//            title.setBorderPainted(false);
-//            title.setFocusPainted(false);
-//            title.setPreferredSize(new Dimension (550, 300));
-//            title.setHorizontalAlignment(SwingConstants.CENTER);
-//            title.setVerticalAlignment(SwingConstants.CENTER);
-       
-    		fr.setContentPane(jp);
-            fr.setLayout(new FlowLayout());
-            fr.pack();
-           
-            //pass
-            pass = new JButton(passcombo);
-            pass.setContentAreaFilled(false);
-            pass.setRolloverEnabled(false);
-            pass.setBorderPainted(false);
-            pass.setFocusPainted(false);
-            pass.setPreferredSize(new Dimension (150, 75));
-            pass.setHorizontalAlignment(SwingConstants.LEFT);
-            pass.setVerticalAlignment(SwingConstants.CENTER);
-            pass.setActionCommand("rules");
-
-            //play
-            play = new JButton (playC);
-            play.setPreferredSize(new Dimension (150, 75));
-            play.setContentAreaFilled(false);
-            play.setRolloverEnabled(false);
-            play.setBorderPainted(false);
-            play.setFocusPainted(false);
-            play.setHorizontalAlignment(SwingConstants.CENTER);
-            play.setVerticalAlignment(SwingConstants.CENTER );
-            play.setActionCommand("play");
-            
-            
-            
-        	ImageIcon backy = new ImageIcon(ImageIO.read(new File("table.jpg")));
-        	Image b = backy.getImage();
-        	Image newB = b.getScaledInstance( 1000, 800, java.awt.Image.SCALE_DEFAULT ) ;
-        	backy = new ImageIcon (newB);
-        	JLabel back = new JLabel(backy);
-        	
-            //back.setSize(1000, 800);
-        	fr.setContentPane(back);
-        	fr.getContentPane().add(pass);
-            fr.getContentPane().add(play);
-            fr.setLayout(null);
-            jp.setLayout(null);
-            pass.setBounds(625, 480, 175, 250);
-            play.setBounds(750, 400, 400, 400);
-            fr.setLocationRelativeTo(null);
-            fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
-            fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            play.addActionListener(this);
-        	pass.addActionListener(this);
-    		fr.setVisible(true);
-    		
-    		
-    		
-    		
+//            //back.setSize(1000, 800);
+//        	fr.setContentPane(back);
+//        	fr.getContentPane().add(pass);
+//            fr.getContentPane().add(play);
+//            fr.setLayout(null);
+//            jp.setLayout(null);
+//            pass.setBounds(625, 480, 175, 250);
+//            play.setBounds(750, 400, 400, 400);
+//            fr.setLocationRelativeTo(null);
+//            fr.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+//            fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//            play.addActionListener(this);
+//        	pass.addActionListener(this);
+//    		fr.setVisible(true);
+//    		
+    		ConsoleView a = new ConsoleView();
+//    		a.playScren();
+//    		
     		
     		
             
-        } catch (IOException er) {
-        	System.out.println("not working");
-            er.printStackTrace();
-        }
+//        } catch (IOException er) {
+//        	System.out.println("not working");
+//            er.printStackTrace();
+//        }
 	}
 	public void actionPerformed(ActionEvent e) {
 		//repaint(g);

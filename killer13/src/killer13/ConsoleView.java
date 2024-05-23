@@ -22,14 +22,15 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class ConsoleView extends JFrame {
-	
+	public JFrame ps;
+	public JPanel psp;
 	public ConsoleView() {
 		this.setLocation(100,100);
 		this.setSize(600,400);
 		this.setLayout(new BorderLayout());
 		//this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		JLabel header = new JLabel("Console");
+		JLabel header = new JLabel("Killer");
 		this.add(header, BorderLayout.NORTH);
 		
 		final JTextArea console = new JTextArea();
@@ -70,12 +71,14 @@ public class ConsoleView extends JFrame {
 			public void write(int c) {
 				console.setText(console.getText() + String.valueOf((char) c));
 			}
+			
+		
 		}));
-	
+	}
+	public void playScren() {
+		
 	}
 	
-	
-
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
@@ -84,8 +87,6 @@ public class ConsoleView extends JFrame {
 			}
 		});
 	}
-
-	
 	
 	
 	

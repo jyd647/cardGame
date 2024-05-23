@@ -13,7 +13,7 @@ public class Deck {
 	private Image cardBack;
 	
 	public Deck() {
-		cardBack = getImage("H:\\git\\cardGame\\killer13\\images\\" + "cardback.png");
+		//cardBack = getImage("/images/" + "cardback.png");
 		deck = new ArrayList<Card>();
 		System.out.println("meow");
 		//initializeDeck(); 
