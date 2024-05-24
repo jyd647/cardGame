@@ -3,6 +3,7 @@ package killer13;
 import java.util.ArrayList;
 
 public class Killer {
+	///DONT TOUCH LET ME COOK
 	
 	private static ArrayList<Hand> totalHands = new ArrayList<Hand>();
 	private Hand currentPlay = new Hand();

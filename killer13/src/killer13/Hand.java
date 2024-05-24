@@ -131,7 +131,7 @@ public class Hand {
 	}
 
 	public void printCombos() 
-	{
+	{  
 		System.out.println(combos);
 	}
 

@@ -9,60 +9,62 @@ import java.util.List;
 
 public class Deck {
 	private ArrayList <Card> deck;
-	private ArrayList <Combo> ways;
-	private Image cardBack;
+//DONT TOUCH LET ME COOK
 	
 	public Deck() {
-		//cardBack = getImage("/images/" + "cardback.png");
 		deck = new ArrayList<Card>();
-		System.out.println("meow");
-		//initializeDeck(); 
+		for(int i = 3; i < 16; i++) {
+			for(int j = 0; j < 4; j++) {
+				Card c = new Card(i, j);
+				deck.add(c);
+			}
+		}
 		
 	}
 	
 	
 	
-	public void initializeDeck() {  
+	//public void initializeDeck() {  
 		
 		//creating deck with cards with numbers assigned to them
 		
 		//adding to deck face cards, with assigned values
-		deck.add(new Card(this.getImage("title.png"), "Spades", 9));
-		System.out.println("bark");
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofclubs.png"), "Clubs", 9));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofdiamonds.png"), "Diamonds", 9));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofhearts.png"), "Hearts", 9));
-        
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofspades.png"), "Spades", 10));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofclubs.png"), "Clubs", 10));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofdiamonds.png"), "Diamonds", 10));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofhearts.png"), "Hearts", 10));
-        
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofspades.png"), "Spades", 11));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofclubs.png"), "Clubs", 11));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofdiamonds.png"), "Diamonds", 11));
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofhearts.png"), "Hearts", 11));
-        
-        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofspades.png"), "Spades", 12));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofclubs.png"), "Clubs", 12));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofdiamonds.png"), "Diamonds", 12));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofhearts.png"), "Hearts", 12));
-		
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2spades.png"), "Spades", 13));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2clubs.png"), "Clubs", 13));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2Diamonds.png"), "Diamonds", 13));
-		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2Hearts.png"), "Hearts", 13));
-		
-		//number cards - assigning values
-		for (int i = 3; i <= 10; i++){
-			
-			//adding to deck
-            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "spades.png"), "Spades", i-2));
-            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "clubs.png"), "Clubs", i-2));
-            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "diamonds.png"), "Diamonds", i-2));
-            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "hearts.png"), "Hearts", i-2));
-        }
-	}
+//		deck.add(new Card(this.getImage("title.png"), "Spades", 9));
+//		System.out.println("bark");
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofclubs.png"), "Clubs", 9));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofdiamonds.png"), "Diamonds", 9));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\jackofhearts.png"), "Hearts", 9));
+//        
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofspades.png"), "Spades", 10));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofclubs.png"), "Clubs", 10));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofdiamonds.png"), "Diamonds", 10));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\queenofhearts.png"), "Hearts", 10));
+//        
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofspades.png"), "Spades", 11));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofclubs.png"), "Clubs", 11));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofdiamonds.png"), "Diamonds", 11));
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\kingofhearts.png"), "Hearts", 11));
+//        
+//        deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofspades.png"), "Spades", 12));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofclubs.png"), "Clubs", 12));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofdiamonds.png"), "Diamonds", 12));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\aceofhearts.png"), "Hearts", 12));
+//		
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2spades.png"), "Spades", 13));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2clubs.png"), "Clubs", 13));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2Diamonds.png"), "Diamonds", 13));
+//		deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\2Hearts.png"), "Hearts", 13));
+//		
+//		//number cards - assigning values
+//		for (int i = 3; i <= 10; i++){
+//			
+//			//adding to deck
+//            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "spades.png"), "Spades", i-2));
+//            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "clubs.png"), "Clubs", i-2));
+//            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "diamonds.png"), "Diamonds", i-2));
+//            deck.add(new Card(getImage("H:\\git\\cardGame\\killer13\\images\\" + i + "hearts.png"), "Hearts", i-2));
+//        }
+//	}
 	
 	//shuffle method
 	public void shuffle() {
