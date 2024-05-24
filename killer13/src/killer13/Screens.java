@@ -8,15 +8,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 
 import javax.imageio.ImageIO;
+import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.GroupLayout.Alignment;
 
 public class Screens extends JPanel implements ActionListener{
 
@@ -229,8 +237,11 @@ public class Screens extends JPanel implements ActionListener{
 //        	pass.addActionListener(this);
 //    		fr.setVisible(true);
 //    		
-    		ConsoleView a = new ConsoleView();
-//    		a.playScren();
+	}
+	
+	
+	
+	
 //    		
     		
     		
@@ -239,7 +250,7 @@ public class Screens extends JPanel implements ActionListener{
 //        	System.out.println("not working");
 //            er.printStackTrace();
 //        }
-	}
+	
 	public void actionPerformed(ActionEvent e) {
 		//repaint(g);
 		// TODO Auto-generated method stub
