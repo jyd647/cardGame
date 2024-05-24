@@ -15,17 +15,18 @@ public class Card extends Deck{
 //	sixSpades, sixClubs, sixDiamonds, sixHearts, sevenSpades, sevenClubs, sevenDiamond, sevenHearts, eightSpades, eightClubs,
 //	eightDiamonds, eightHearts, nineSpades, nineClubs, nineDiamonds, nineHearts, tenSpades, tenClubs, tenDiamonds, tenHearts,
 //	twoSpades, twoClubs, twoDiamonds, twoHearts;
-	private Image image;
-	private String suit;
-	private int value;
-	private double scaleWidth;
+//	private Image image;
+	private int suit;
+	private int rank;
+	private String[] suits = {"S", "C", "D", "H"};
+	private String[] ranks = {"X", "X", "X", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A", "2"};
+//	private double scaleWidth;
 	
 	
-	public Card(Image img, String s, int val) {
+	public Card(int r, int s) {
 		
-		image = img;
+		rank = r;
 		suit = s;
-		value = val;
 		
 //		cardBack = getImage("/imgs/" + "cardback.png");
 //		aceSpades = getImage("/imgs/" + "aceofspades.png");
@@ -83,20 +84,47 @@ public class Card extends Deck{
 		
 	}
 	
-	public Image getImage() {
-		return image;
+	public int getRank() {
+		return rank;
+		
 	}
 	
-	public String getSuit() {
+	public int getSuit() {
 		return suit;
 	}
 	
-	public int getValue() {
-		return value;
+	public String rankToString(int r) {
+		return ranks[r];
 	}
 	
+	public String suitToString(int s) {
+		return suits[s];
+	}
 	
+	public String getSuitAsString() {
+		return suitToString(suit);
+	}
 	
+	public String getRankAsString() {
+		return rankToString(rank);
+	}
+	
+	public String toString() {
+		return ranks[rank] + suits[suit];
+	}
+	
+	public int overallRank() {
+		int rank4 = rank*4;
+		return rank4 + suit;
+	}
+	
+	public boolean equals(Card c) {
+		if(rank == c.getRank() && suit == c.getSuit()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	
 	private Image getImage(String path) {
