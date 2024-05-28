@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.net.URL;
 
-public class Card extends Deck{
+public class Card {
 	
 //	private Image cardBack, aceSpades, aceClubs, aceDiamonds, aceHearts, jackSpades, jackClubs, jackHearts, jackDiamonds,
 //	queenSpades, queenClubs, queenDiamonds, queenHearts, kingSpades, kingClubs, kingDiamonds, kingHearts, threeSpades, threeClubs,

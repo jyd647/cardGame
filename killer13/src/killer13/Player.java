@@ -31,8 +31,8 @@ public class Player extends JPanel {
 //    Panel back = new Panel("H:\\git\\cardGame\\killer13\\images\\jackofspades.png");
     private Deck deck;
     private Hand h = new Hand();
-    private ArrayList<Card> playing = h.getCurr();
-    private ArrayList<Card> opp = h.getEnemy();
+//    private ArrayList<Card> playing = h.getCurr();
+//    private ArrayList<Card> opp = h.getEnemy();
        public void paint(Graphics g) {
    		super.paintComponent(g);
    		Graphics2D g2 = (Graphics2D) g;
