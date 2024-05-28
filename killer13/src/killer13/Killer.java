@@ -825,7 +825,7 @@ public class Killer {
         }else{
             Killer.main(new String[0]);
             System.out.println("Program has ended, please type 'exit' to close the console");
-        
+         
 		
 	}
 		
