@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import killer13.Card;
+import killer13.Randomizer;
+
 public class Deck {
 	private ArrayList <Card> deck;
 //DONT TOUCH LET ME COOK
@@ -21,6 +24,41 @@ public class Deck {
 		}
 		
 	}
+	
+	
+	public Card deal(){
+		
+		return deck.remove(0);
+	}
+	
+	public ArrayList<Card> getCards(){
+		
+		return deck;
+	}
+
+	public void shuffle(){
+		
+        for(int i = 0; i < deck.size(); i++){
+            int randomIndex = Randomizer.nextInt(52);
+            Card x = deck.get(i);
+            Card y = deck.get(randomIndex);
+            
+            deck.set(i, y);
+            deck.set(randomIndex, x);
+        }
+    }
+
+	public boolean deckEmpty(){
+		if(deck.size() == 0)
+		{
+			return true;
+		}
+		return false;
+	}
+}
+	
+	
+	
 	
 	
 	
@@ -66,51 +104,7 @@ public class Deck {
 //        }
 //	}
 	
-	//shuffle method
-	public void shuffle() {
-		Collections.shuffle(deck);
-	}
-	
-	
-	public Card drawCard() {
-		if(deck.isEmpty()) {
-			return null;
-		}
-		return deck.remove(deck.size() - 1);
-	}
-	
-	public ArrayList<Card> dealHand(int numCards){
-		ArrayList<Card> hand = new ArrayList<>();
-		for(int i = 0; i < numCards; i++) {
-			hand.add(drawCard());
-		}
-		return hand;
-	}
-	
-	//in the main/driver class, player1 = new Player(deck.dealHand(13)); to draw 13 cards   assuming deck = new Deck(); in the main class
-	
-	public ArrayList<Card> getDeck() {
-		return deck;
-	}
 
+	
+	
 
-	public void setDeck(ArrayList<Card> deck) {
-		this.deck = deck;
-	}
-	
-	private Image getImage(String path) {
-		Image tempImage = null;
-		try {
-			URL imageURL = Deck.class.getResource(path);
-			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return tempImage;
-	}
-	
-	
-	
-	
-	
-}
