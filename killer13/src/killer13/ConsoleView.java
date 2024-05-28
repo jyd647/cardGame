@@ -68,7 +68,7 @@ public class ConsoleView extends JFrame {
 			
 			@Override
 			public void write(int c) {
-				console.setText(				System.out.println("hey") + console.getText() + String.valueOf((char) c));
+				console.setText(console.getText() + String.valueOf((char) c));
 			}
 			
 
@@ -79,10 +79,11 @@ public class ConsoleView extends JFrame {
 	}
 	
 	public static void main(String[] args) {
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				new ConsoleView().setVisible(true);
+				//new ConsoleView().setVisible(true);
 			}
 		});
 	}
