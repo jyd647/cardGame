@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import killer13.Hand;
+import killer13.Deck;
 import killer13.Card;
 
 
@@ -808,7 +809,66 @@ public class Killer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Deck d = new Deck();
+		d.shuffle();
+		Hand player = new Hand();
+		totalHands.add(player);
+		while (true) 
+		{
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("Welcome to Killer!");
+			System.out.println("How many players? (2-4)");
+			String string = scanner.nextLine();
+			if (string.equals("2")) 
+			{
+				Hand comp1 = new Hand();
+				totalHands.add(comp1);
+				for (int i = 0; i < 13; i++) 
+				{
+					player.insertCard(d.deal());
+					comp1.insertCard(d.deal());
+				}
+				break;
+			} 
+			else if (string.equals("3")) 
+			{
+				Hand comp1 = new Hand();
+				totalHands.add(comp1);
+				Hand comp2 = new Hand();
+				totalHands.add(comp2);
+				for (int i = 0; i < 13; i++) 
+				{
+					player.insertCard(d.deal());
+					comp1.insertCard(d.deal());
+					comp2.insertCard(d.deal());
+				}
+				break;
+			} 
+			
+			else if (string.equals("4")) 
+			{
+				Hand comp1 = new Hand();
+				totalHands.add(comp1);
+				Hand comp2 = new Hand();
+				totalHands.add(comp2);
+				Hand comp3 = new Hand();
+				totalHands.add(comp3);
+				for (int i = 0; i < 13; i++) 
+				{
+					player.insertCard(d.deal());
+					comp1.insertCard(d.deal());
+					comp2.insertCard(d.deal());
+					comp3.insertCard(d.deal());
+				}
+				break;
+			} 
+			else 
+			{
+				System.out.println("Retry");
+			}
+		}
 
+		
 	}
 
 }
