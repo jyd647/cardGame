@@ -64,15 +64,14 @@ public class ConsoleView extends JFrame {
 				.addComponent(enterButton)
 		);
 		this.add(inputFieldPanel, BorderLayout.SOUTH);
-		
 		System.setOut(new PrintStream(new OutputStream() {
 			
 			@Override
 			public void write(int c) {
-				console.setText(console.getText() + String.valueOf((char) c));
+				console.setText(				System.out.println("hey") + console.getText() + String.valueOf((char) c));
 			}
 			
-		
+
 		}));
 	}
 	public void playScren() {
