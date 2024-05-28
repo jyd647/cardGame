@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
@@ -22,8 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class ConsoleView extends JFrame {
-	public JFrame ps;
-	public JPanel psp;
+
 	public ConsoleView() {
 		this.setLocation(100,100);
 		this.setSize(600,400);
@@ -68,6 +67,7 @@ public class ConsoleView extends JFrame {
 			
 			@Override
 			public void write(int c) {
+				
 				console.setText(console.getText() + String.valueOf((char) c));
 			}
 			
@@ -83,7 +83,7 @@ public class ConsoleView extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				//new ConsoleView().setVisible(true);
+				new ConsoleView().setVisible(true);
 			}
 		});
 	}

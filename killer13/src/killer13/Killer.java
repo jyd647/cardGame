@@ -818,16 +818,14 @@ public class Killer {
 		else {
 			System.out.println("Computer " + (index - 1) + " has won! You lost...");
 		}
-		Console console = System.console();
-        if(console == null && !GraphicsEnvironment.isHeadless()){
-            String filename = Killer.class.getProtectionDomain().getCodeSource().getLocation().toString().substring(6);
-            Runtime.getRuntime().exec(new String[]{"cmd","/c","start","cmd","/k","java -jar \"" + filename + "\""});
-        }else{
-            Killer.main(new String[0]);
-            System.out.println("Program has ended, please type 'exit' to close the console");
-         
-		
-	}
+//		Console console = System.console();
+//        if(console == null && !GraphicsEnvironment.isHeadless()){
+//            String filename = Killer.class.getProtectionDomain().getCodeSource().getLocation().toString().substring(6);
+//            Runtime.getRuntime().exec(new String[]{"cmd","/c","start","cmd","/k","java -jar \"" + filename + "\""});
+//        }else{
+//            Killer.main(new String[0]);
+//            System.out.println("Program has ended, please type 'exit' to close the console");
+//        }
 		
 	}
 }
