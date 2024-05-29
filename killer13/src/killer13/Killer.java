@@ -1,8 +1,11 @@
 package killer13;
 
 import java.awt.GraphicsEnvironment;
+import java.io.BufferedOutputStream;
 import java.io.Console;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,6 +20,7 @@ public class Killer {
 	private static ArrayList<Hand> totalHands = new ArrayList<Hand>();
 	private static Hand currentPlay = new Hand();
 	private static int counter;
+	static String text;
 	
 	private static Hand firstTurn(ArrayList<Hand> totalHands) {
 		for(int i = 3; i <= 15; i++) {
@@ -749,6 +753,10 @@ public class Killer {
 		Hand player = new Hand();
 		totalHands.add(player);
 		while (true) {
+			//String file = "";
+		    PrintStream ps = 
+		      new PrintStream(new BufferedOutputStream(new FileOutputStream(text, true)), true);
+		    System.setOut(ps);
 			Scanner scanner = new Scanner(System.in);
 			System.out.println("Welcome to Killer!");
 			System.out.println("How many players? (2-4)");
@@ -818,6 +826,7 @@ public class Killer {
 		else {
 			System.out.println("Computer " + (index - 1) + " has won! You lost...");
 		}
+		
 //		Console console = System.console();
 //        if(console == null && !GraphicsEnvironment.isHeadless()){
 //            String filename = Killer.class.getProtectionDomain().getCodeSource().getLocation().toString().substring(6);

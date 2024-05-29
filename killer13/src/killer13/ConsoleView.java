@@ -47,7 +47,7 @@ public class ConsoleView extends JFrame {
 				inputField.setText(null);
 			}
 		});
-		
+		console.setText(Killer.text);
 		this.getRootPane().setDefaultButton(enterButton);
 	
 		JPanel inputFieldPanel = new JPanel();
