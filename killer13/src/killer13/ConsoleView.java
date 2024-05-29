@@ -22,7 +22,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 public class ConsoleView extends JFrame {
-
+	//JFrame ps = new JFrame();
 	public ConsoleView() {
 		this.setLocation(100,100);
 		this.setSize(600,400);
@@ -83,7 +83,7 @@ public class ConsoleView extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				new ConsoleView().setVisible(true);
+				//new ConsoleView().setVisible(true);
 			}
 		});
 	}

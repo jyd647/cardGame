@@ -54,7 +54,7 @@ public class Player extends JPanel {
 		// TODO Auto-generated method stub
 		
 		Player player1 = new Player();
-		
+		//if ( == true) {
 		
 	}
 	
@@ -69,8 +69,11 @@ public class Player extends JPanel {
  			screen.pop();
  		}
  		if (screen.peek().equals(play)) {
-			System.exit(0);
- 			System.out.println("kay");
+ 			
+			play.playScreen();
+			
+			
+ 			//System.out.println("kay");
  			
  		} else {
  			System.out.println("hey");
