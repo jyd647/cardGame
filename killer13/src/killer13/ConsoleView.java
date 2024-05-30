@@ -127,13 +127,16 @@ public class ConsoleView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(() -> {
+                	
                     String input = inputField.getText();
                     inputQueue.offer(input);
                     inputField.setText(""); // Clearing text field
+                
                 });
+            
             }
         });
-
+        
         this.getRootPane().setDefaultButton(enterButton);
 
         JPanel inputFieldPanel = new JPanel();
