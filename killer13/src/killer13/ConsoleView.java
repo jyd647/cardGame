@@ -3,6 +3,9 @@ package killer13;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import javax.swing.GroupLayout;
@@ -166,6 +169,9 @@ public class ConsoleView extends JFrame {
 
     public String getInput() {
         try {
+        	BufferedWriter writer = new BufferedWriter(new FileWriter("plays.txt"));
+            writer.write(inputQueue.peek());
+            writer.close();            
             return inputQueue.take();
         } catch (InterruptedException e) {
             e.printStackTrace();

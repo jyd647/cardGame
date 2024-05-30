@@ -261,8 +261,10 @@ public class Screens extends JPanel implements ActionListener{
 	                SwingUtilities.invokeLater(() -> {
 	                	
 	                    String input = inputField.getText();
+	                    
 	                    inputQueue.offer(input);
 	                    inputField.setText(""); // Clearing text field
+	                    }
 	                
 	                });
 	            
@@ -287,10 +289,13 @@ public class Screens extends JPanel implements ActionListener{
 
 	        System.setOut(new PrintStream(new OutputStream() {
 	            @Override
+	            
 	            public void write(int c) {
 	                console.append(String.valueOf((char) c));
 	            }
+	            
 	        }));
+	       
 
 	        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        this.setVisible(true);
@@ -350,12 +355,15 @@ public class Screens extends JPanel implements ActionListener{
 		} else if ("play".equals(e.getActionCommand())) {
 			setPlay(true);
 			SwingUtilities.invokeLater(new Runnable() {
+				
 	            @Override
 	            public void run() {
 	                ConsoleView consoleView = new ConsoleView();
 	                consoleView.startGame();
-	            }
+	            
+				}
 	        });
+			
 			playScreen();
 			
 			

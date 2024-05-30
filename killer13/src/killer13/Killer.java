@@ -21,6 +21,8 @@ public class Killer {
 	private static Hand currentPlay = new Hand();
 	private static int counter;
 	static String text;
+    //ConsoleView consoleView = new ConsoleView();
+
 	
 	private static Hand firstTurn(ArrayList<Hand> totalHands) {
 		for(int i = 3; i <= 15; i++) {
@@ -828,13 +830,13 @@ public class Killer {
 //		}
 		
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
         Deck d = new Deck();
         d.shuffle();
         Hand player = new Hand();
         totalHands.add(player);
 
-        ConsoleView consoleView = new ConsoleView();
+       ConsoleView consoleView = new ConsoleView();
 
         while (true) {
             System.out.println("Welcome to Killer!");
