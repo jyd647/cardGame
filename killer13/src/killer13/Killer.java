@@ -745,88 +745,164 @@ public class Killer {
 		}
 	}
 
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
+//	public static void main(String[] args) throws IOException {
+//		// TODO Auto-generated method stub
+//		
+//		Deck d = new Deck();
+//		d.shuffle();
+//		Hand player = new Hand();
+//		totalHands.add(player);
+//		while (true) {
+//			//String file = "";
+//		    PrintStream ps = 
+//		      new PrintStream(new BufferedOutputStream(new FileOutputStream(text, true)), true);
+//		    System.setOut(ps);
+//			Scanner scanner = new Scanner(System.in);
+//			System.out.println("Welcome to Killer!");
+//			System.out.println("How many players? (2-4)");
+//			String string = scanner.nextLine();
+//			if (string.equals("2")) {
+//				Hand comp1 = new Hand();
+//				totalHands.add(comp1);
+//				for (int i = 0; i < 13; i++) {
+//					player.insertCard(d.deal());
+//					comp1.insertCard(d.deal());
+//				}
+//				break;
+//			} 
+//			else if (string.equals("3")) {
+//				Hand comp1 = new Hand();
+//				totalHands.add(comp1);
+//				Hand comp2 = new Hand();
+//				totalHands.add(comp2);
+//				for (int i = 0; i < 13; i++) {
+//					player.insertCard(d.deal());
+//					comp1.insertCard(d.deal());
+//					comp2.insertCard(d.deal());
+//				}
+//				break;
+//			} 
+//			
+//			else if (string.equals("4")) {
+//				Hand comp1 = new Hand();
+//				totalHands.add(comp1);
+//				Hand comp2 = new Hand();
+//				totalHands.add(comp2);
+//				Hand comp3 = new Hand();
+//				totalHands.add(comp3);
+//				for (int i = 0; i < 13; i++) {
+//					player.insertCard(d.deal());
+//					comp1.insertCard(d.deal());
+//					comp2.insertCard(d.deal());
+//					comp3.insertCard(d.deal());
+//				}
+//				break;
+//			} 
+//			else {
+//				System.out.println("Retry");
+//			}
+//		}
+//		
+//		int index = totalHands.indexOf(firstTurn(totalHands));
+//		while (isGameStillRunning()) 
+//		{
+//			if (index == 0) {
+//				playerTurn(player);
+//			} 
+//			else {
+//				compTurn(totalHands.get(index));
+//			}
+//			if (index == totalHands.size() - 1) {
+//				index = -1;
+//			}
+//			index++;
+//		}
+//		if(index == 1) {
+//			System.out.println("Congratulations! You are the winner!");
+//		}
+//		else if(index == 0){
+//			System.out.println("Computer " + (totalHands.size() - 1) + " has won! You lost...");
+//		}
+//		else {
+//			System.out.println("Computer " + (index - 1) + " has won! You lost...");
+//		}
 		
-		Deck d = new Deck();
-		d.shuffle();
-		Hand player = new Hand();
-		totalHands.add(player);
-		while (true) {
-			//String file = "";
-		    PrintStream ps = 
-		      new PrintStream(new BufferedOutputStream(new FileOutputStream(text, true)), true);
-		    System.setOut(ps);
-			Scanner scanner = new Scanner(System.in);
-			System.out.println("Welcome to Killer!");
-			System.out.println("How many players? (2-4)");
-			String string = scanner.nextLine();
-			if (string.equals("2")) {
-				Hand comp1 = new Hand();
-				totalHands.add(comp1);
-				for (int i = 0; i < 13; i++) {
-					player.insertCard(d.deal());
-					comp1.insertCard(d.deal());
-				}
-				break;
-			} 
-			else if (string.equals("3")) {
-				Hand comp1 = new Hand();
-				totalHands.add(comp1);
-				Hand comp2 = new Hand();
-				totalHands.add(comp2);
-				for (int i = 0; i < 13; i++) {
-					player.insertCard(d.deal());
-					comp1.insertCard(d.deal());
-					comp2.insertCard(d.deal());
-				}
-				break;
-			} 
-			
-			else if (string.equals("4")) {
-				Hand comp1 = new Hand();
-				totalHands.add(comp1);
-				Hand comp2 = new Hand();
-				totalHands.add(comp2);
-				Hand comp3 = new Hand();
-				totalHands.add(comp3);
-				for (int i = 0; i < 13; i++) {
-					player.insertCard(d.deal());
-					comp1.insertCard(d.deal());
-					comp2.insertCard(d.deal());
-					comp3.insertCard(d.deal());
-				}
-				break;
-			} 
-			else {
-				System.out.println("Retry");
-			}
-		}
-		
-		int index = totalHands.indexOf(firstTurn(totalHands));
-		while (isGameStillRunning()) 
-		{
-			if (index == 0) {
-				playerTurn(player);
-			} 
-			else {
-				compTurn(totalHands.get(index));
-			}
-			if (index == totalHands.size() - 1) {
-				index = -1;
-			}
-			index++;
-		}
-		if(index == 1) {
-			System.out.println("Congratulations! You are the winner!");
-		}
-		else if(index == 0){
-			System.out.println("Computer " + (totalHands.size() - 1) + " has won! You lost...");
-		}
-		else {
-			System.out.println("Computer " + (index - 1) + " has won! You lost...");
-		}
-		
+	
+	public static void main(String[] args) {
+        Deck d = new Deck();
+        d.shuffle();
+        Hand player = new Hand();
+        totalHands.add(player);
+
+        ConsoleView consoleView = new ConsoleView();
+
+        while (true) {
+            System.out.println("Welcome to Killer!");
+            System.out.println("How many players? (2-4)");
+            String string = consoleView.getInput();
+            if (string.equals("2")) {
+                Hand comp1 = new Hand();
+                totalHands.add(comp1);
+                for (int i = 0; i < 13; i++) {
+                    player.insertCard(d.deal());
+                    comp1.insertCard(d.deal());
+                }
+                break;
+            } else if (string.equals("3")) {
+                Hand comp1 = new Hand();
+                totalHands.add(comp1);
+                Hand comp2 = new Hand();
+                totalHands.add(comp2);
+                for (int i = 0; i < 13; i++) {
+                    player.insertCard(d.deal());
+                    comp1.insertCard(d.deal());
+                    comp2.insertCard(d.deal());
+                }
+                break;
+            } else if (string.equals("4")) {
+                Hand comp1 = new Hand();
+                totalHands.add(comp1);
+                Hand comp2 = new Hand();
+                totalHands.add(comp2);
+                Hand comp3 = new Hand();
+                totalHands.add(comp3);
+                for (int i = 0; i < 13; i++) {
+                    player.insertCard(d.deal());
+                    comp1.insertCard(d.deal());
+                    comp2.insertCard(d.deal());
+                    comp3.insertCard(d.deal());
+                }
+                break;
+            } else {
+                System.out.println("Retry");
+            }
+        }
+
+        int index = totalHands.indexOf(firstTurn(totalHands));
+        while (isGameStillRunning()) {
+            if (index == 0) {
+                playerTurn(player);
+            } else {
+                compTurn(totalHands.get(index));
+            }
+            if (index == totalHands.size() - 1) {
+                index = -1;
+            }
+            index++;
+        }
+        if (index == 1) {
+            System.out.println("Congratulations! You are the winner!");
+        } else if (index == 0) {
+            System.out.println("Computer " + (totalHands.size() - 1) + " has won! You lost...");
+        } else {
+            System.out.println("Computer " + (index - 1) + " has won! You lost...");
+        }
+    }
+	
+	
+	
+	
+	
 //		Console console = System.console();
 //        if(console == null && !GraphicsEnvironment.isHeadless()){
 //            String filename = Killer.class.getProtectionDomain().getCodeSource().getLocation().toString().substring(6);
@@ -837,4 +913,4 @@ public class Killer {
 //        }
 		
 	}
-}
+

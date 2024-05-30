@@ -126,31 +126,7 @@ public class Card {
 		}
 	}
 	
-	
-	private Image getImage(String path) {
-		Image tempImage = null;
-		try {
-			URL imageURL = Card.class.getResource(path);
-			tempImage = Toolkit.getDefaultToolkit().getImage(imageURL);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return tempImage;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 
 }
