@@ -16,7 +16,7 @@ import killer13.Card;
 
 public class Killer {
 	///DONT TOUCH LET ME COOK
-	
+
 	private static ArrayList<Hand> totalHands = new ArrayList<Hand>();
 	private static Hand currentPlay = new Hand();
 	private static int counter;
@@ -104,8 +104,8 @@ public class Killer {
 	private static void playerTurn(Hand player) {
 		player.sortAll();
 		player.combos().clear();
-		Scanner scanner = new Scanner(System.in);
 		System.out.println("This is your current hand: ");
+		Scanner scanner = new Scanner(System.in);
 		player.printHand();
 		if(currentPlay.combos().size() != 0) {
 			System.out.println("This was the previous play: ");
@@ -114,7 +114,7 @@ public class Killer {
 		while(true) {
 			System.out.println("What card do you want to add to your combo?");
 			System.out.println("If you want to pass or finish your combo, press enter.");
-			String cardInput = scanner.nextLine();
+			String cardInput = ConsoleView.inputQueue.peek();
 		 if(cardInput.equals("")) {
 			break;
 		} else if(cardInput.length()> 1 && cardInput.length() < 4) {

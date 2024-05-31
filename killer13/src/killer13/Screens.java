@@ -241,65 +241,69 @@ public class Screens extends JPanel implements ActionListener{
 //            play.addActionListener(this);
 //        	pass.addActionListener(this);
 //    		fr.setVisible(true);
-		 this.setLocation(100, 100);
-	        this.setSize(600, 400);
-	        this.setLayout(new BorderLayout());
-
-	        JLabel header = new JLabel("Killer");
-	        this.add(header, BorderLayout.NORTH);
-
-	        console = new JTextArea();
-	        console.setEditable(false);
-	        this.add(new JScrollPane(console), BorderLayout.CENTER);
-
-	        inputField = new JTextField();
-
-	        JButton enterButton = new JButton("Enter");
-	        enterButton.addActionListener(new ActionListener() {
-	            @Override
-	            public void actionPerformed(ActionEvent e) {
-	                SwingUtilities.invokeLater(() -> {
-	                	
-	                    String input = inputField.getText();
-	                    
-	                    inputQueue.offer(input);
-	                    inputField.setText(""); // Clearing text field
-	                    }
-	                
-	                });
-	            
-	            }
-	        });
-	        
-	        this.getRootPane().setDefaultButton(enterButton);
-
-	        JPanel inputFieldPanel = new JPanel();
-	        GroupLayout layout = new GroupLayout(inputFieldPanel);
-	        inputFieldPanel.setLayout(layout);
-	        layout.setAutoCreateContainerGaps(true);
-	        layout.setHorizontalGroup(layout.createSequentialGroup()
-	                .addComponent(inputField)
-	                .addComponent(enterButton)
-	        );
-	        layout.setVerticalGroup(layout.createParallelGroup(Alignment.BASELINE)
-	                .addComponent(inputField)
-	                .addComponent(enterButton)
-	        );
-	        this.add(inputFieldPanel, BorderLayout.SOUTH);
-
-	        System.setOut(new PrintStream(new OutputStream() {
-	            @Override
-	            
-	            public void write(int c) {
-	                console.append(String.valueOf((char) c));
-	            }
-	            
-	        }));
-	       
-
+		
+		
+		
+		
+//		 this.setLocation(100, 100);
+//	        this.setSize(600, 400);
+//	        this.setLayout(new BorderLayout());
+//
+//	        JLabel header = new JLabel("Killer");
+//	        this.add(header, BorderLayout.NORTH);
+//
+//	        console = new JTextArea();
+//	        console.setEditable(false);
+//	        this.add(new JScrollPane(console), BorderLayout.CENTER);
+//
+//	        inputField = new JTextField();
+//
+//	        JButton enterButton = new JButton("Enter");
+//	        enterButton.addActionListener(new ActionListener() {
+//	            @Override
+//	            public void actionPerformed(ActionEvent e) {
+//	                SwingUtilities.invokeLater(() -> {
+//	                	
+//	                    String input = inputField.getText();
+//	                    
+//	                    inputQueue.offer(input);
+//	                    inputField.setText(""); // Clearing text field
+//	                    }
+//	                
+//	                });
+//	            
+//	            }
+//	        });
+//	        
+//	        this.getRootPane().setDefaultButton(enterButton);
+//
+//	        JPanel inputFieldPanel = new JPanel();
+//	        GroupLayout layout = new GroupLayout(inputFieldPanel);
+//	        inputFieldPanel.setLayout(layout);
+//	        layout.setAutoCreateContainerGaps(true);
+//	        layout.setHorizontalGroup(layout.createSequentialGroup()
+//	                .addComponent(inputField)
+//	                .addComponent(enterButton)
+//	        );
+//	        layout.setVerticalGroup(layout.createParallelGroup(Alignment.BASELINE)
+//	                .addComponent(inputField)
+//	                .addComponent(enterButton)
+//	        );
+//	        this.add(inputFieldPanel, BorderLayout.SOUTH);
+//
+//	        System.setOut(new PrintStream(new OutputStream() {
+//	            @Override
+//	            public void write(int c) {
+//	                console.append(String.valueOf((char) c));
+//	            }
+//	        }));
+//
+//	        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//	        this.setVisible(true);
+//	       
+}
 	        //this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        this.setVisible(true);
-	    }
+
 
 	    public String getInput() {
 	        try {
@@ -312,7 +316,12 @@ public class Screens extends JPanel implements ActionListener{
 
 	    public void startGame() {
 	        new Thread(() -> {
-	            Killer.main(new String[0]);
+	            try {
+					Killer.main(new String[0]);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 	        }).start();
 	    }
 

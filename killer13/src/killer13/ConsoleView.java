@@ -6,8 +6,11 @@ import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JButton;
@@ -130,10 +133,15 @@ public class ConsoleView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(() -> {
-                	
                     String input = inputField.getText();
+                    if (input.length()>1) {
+                    	System.out.println(input);
+                    }
+                   
+//                    	
                     inputQueue.offer(input);
                     inputField.setText(""); // Clearing text field
+                   
                 
                 });
             
@@ -169,9 +177,21 @@ public class ConsoleView extends JFrame {
 
     public String getInput() {
         try {
-        	BufferedWriter writer = new BufferedWriter(new FileWriter("plays.txt"));
-            writer.write(inputQueue.peek());
-            writer.close();            
+//        	BufferedWriter writer = new BufferedWriter(new FileWriter("plays.txt"));
+//            writer.write(inputQueue.peek());
+//            writer.close();          
+//        	 try
+//             {
+//                 String filename= "plays.txt";
+//                 FileWriter fw = new FileWriter(filename,true); //the true will append the new data
+//                 fw.write(inputQueue.peek()+"\n"); //appends the string to the file
+//                 fw.close();
+//                 
+//             }
+//             catch(IOException ioe)
+//             {
+//                 System.err.println("IOException: " + ioe.getMessage());
+//             }
             return inputQueue.take();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -181,7 +201,12 @@ public class ConsoleView extends JFrame {
 
     public void startGame() {
         new Thread(() -> {
-            Killer.main(new String[0]);
+            try {
+				Killer.main(new String[0]);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }).start();
     }
 
