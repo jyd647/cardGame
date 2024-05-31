@@ -114,7 +114,7 @@ public class Killer {
 		while(true) {
 			System.out.println("What card do you want to add to your combo?");
 			System.out.println("If you want to pass or finish your combo, press enter.");
-			String cardInput = ConsoleView.inputQueue.peek();
+			String cardInput = scanner.nextLine();
 		 if(cardInput.equals("")) {
 			break;
 		} else if(cardInput.length()> 1 && cardInput.length() < 4) {
