@@ -31,22 +31,9 @@ public class Player extends JPanel {
 //    Panel back = new Panel("H:\\git\\cardGame\\killer13\\images\\jackofspades.png");
     private Deck deck;
     private Hand h = new Hand();
-//    private ArrayList<Card> playing = h.getCurr();
-//    private ArrayList<Card> opp = h.getEnemy();
        public void paint(Graphics g) {
    		super.paintComponent(g);
    		Graphics2D g2 = (Graphics2D) g;
-   		// back.paint(g);
-//   		Card card = deck.drawCard();
-//   		if(card != null) {
-//   			g2.drawImage(card.getImage(), 10, 10, this);
-//   		}	
-   			
-   			
-   		
-   		//screen.pop().homeScreen();
-
-   		///g.drawImage
    		
    	}
 	
@@ -54,8 +41,7 @@ public class Player extends JPanel {
 		// TODO Auto-generated method stub
 		
 		Player player1 = new Player();
-		//if ( == true) {
-		
+
 	}
 	
 	
@@ -70,21 +56,12 @@ public class Player extends JPanel {
  		}
  		if (screen.peek().equals(play)) {
  			
-			play.playScreen();
-			
-			
- 			//System.out.println("kay");
- 			
+			play.playScreen(); 			
  		} else {
  			System.out.println("hey");
  		}
  		
 	 }
-	
-        //add buttons to frame
-        
-
-        //fr.setUndecorated(true);
 	
 	protected ImageIcon createImageIcon(String path,
             String description) {
