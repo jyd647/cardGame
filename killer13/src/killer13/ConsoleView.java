@@ -26,11 +26,18 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 
 public class ConsoleView extends JFrame {
-    private JTextArea console;
-    private JTextField inputField;
-    private BlockingQueue<String> inputQueue = new LinkedBlockingQueue<>();
+    
 
-    public ConsoleView() {
+	private JTextArea console;
+    private JTextField inputField;
+    private static BlockingQueue<String> inputQueue = new LinkedBlockingQueue<>();
+    private String input;
+    
+    public void setInput(String input) {
+		this.input = input;
+	}
+
+	public ConsoleView() {
         this.setLocation(100, 100);
         this.setSize(600, 400);
         this.setLayout(new BorderLayout());
@@ -49,15 +56,13 @@ public class ConsoleView extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 SwingUtilities.invokeLater(() -> {
-                    String input = inputField.getText();
-                    if (input.length()>1) {
-                    	System.out.println(input);
-                    }
-                   
+                     input = inputField.getText();
+                    //System.out.println(input);
+                    
 //                    	
                     inputQueue.offer(input);
                     inputField.setText(""); // Clearing text field
-                   
+                    
                 
                 });
             
@@ -84,14 +89,16 @@ public class ConsoleView extends JFrame {
             @Override
             public void write(int c) {
                 console.append(String.valueOf((char) c));
+
             }
+
         }));
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 
-    public String getInput() {
+    public static String getInput() {
         try {
             return inputQueue.take();
         } catch (InterruptedException e) {
@@ -110,7 +117,14 @@ public class ConsoleView extends JFrame {
 			}
         }).start();
     }
+    public JTextField getInputField() {
+		return inputField;
+	}
 
+	public void setInputField(JTextField inputField) {
+		this.inputField = inputField;
+	}
+	
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             @Override

@@ -58,7 +58,7 @@ public class Player extends JPanel {
  			
 			play.playScreen(); 			
  		} else {
- 			System.out.println("hey");
+ 			return;
  		}
  		
 	 }
